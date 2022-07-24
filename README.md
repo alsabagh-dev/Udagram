@@ -1,7 +1,7 @@
 # Udagram
 **Udagram** is one of **Udacity**'s project to practice deployment process, I took a newly developed full stack application and deployed it to **AWS** so that it is available to customers. This application contains the main components of a 3-tier full stack application (UI, API, and Database).
 
-- [Final Link](http://alsabagh-udagram.s3-website-us-east-1.amazonaws.com/home)
+- [Final Link](http://alsabagh-udagram.s3-website-us-east-1.amazonaws.com)
 
 ![hosted](docs/images/fe.png)
 
