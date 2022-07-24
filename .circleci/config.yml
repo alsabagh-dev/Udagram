@@ -32,10 +32,10 @@ jobs:
           command: |
             npm run be:install
       # TODO: Lint the frontend
-      - run:
-          name: Front-End Lint
-          command: |
-            npm run fe:lint
+      # - run:
+      #     name: Front-End Lint
+      #     command: |
+      #       npm run fe:lint
       # TODO: Build the frontend app
       - run:
           name: Front-End Build
