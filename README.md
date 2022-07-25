@@ -22,6 +22,10 @@
 
 # Documentations
 
+- ## [Infrastructure description](docs/Infrastructure%20description.md)
+
+- ## [App dependencies](docs/app%20dep.md)
+
 - ## [DB Deployment](docs/DB_deploy.md)
 
 - ## [UI Deployment](docs/uI-deploy.md)
@@ -29,3 +33,5 @@
 - ## [Backend Deployment](docs/BE-deploy.md)
 
 - ## [CI/CD](docs/ci.md)
+
+- ## [Pipelibe Process](docs/pipeline%20process.md)
