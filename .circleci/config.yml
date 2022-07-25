@@ -8,7 +8,7 @@ orbs:
   aws-cli: circleci/aws-cli@3.1.1
   # different jobs are calles later in the workflows sections
 jobs:
-  build:
+  deploy:
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/node:16.0"
@@ -54,9 +54,14 @@ jobs:
           command: 
             npm run fe:deploy
 
-general:
-  # Limit Pipleine to run only to the following branch(s)
-  branches:
-    only:
-     - bl7
-     
+
+workflows:
+  install-build-deploy:
+    jobs:
+      - deploy:
+         filters:
+            # Limit Pipleine to run only to the following branch(s)
+            branches:
+              only:
+                - main
+ 
