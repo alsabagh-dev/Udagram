@@ -1,6 +1,8 @@
+# In This Pipe, Build job is defined
+# Build: install FrontEnd > install BackEnd > build FE> Build BE > deploy BE> deploy FE 
 version: 2.1
 orbs:
-  # orgs contain basc recipes and reproducible actions (install node, aws, etc.)
+  # orbs contain basc recipes and reproducible actions (install node, aws, etc.)
   node: circleci/node@5.0.2
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
@@ -15,40 +17,46 @@ jobs:
       - node/install:
           node-version: '16.0'
       - checkout
+      # install AWS cli
       - aws-cli/setup
+      # install EB
       - eb/setup
       
       # Use root level package.json to install dependencies in the frontend app
+      # Step #1 Install FrontEnd packages
       - run:
           name: Install Front-End Dependencies
-          command: |
-            echo "NODE --version" 
-            echo $(node --version)
-            echo "NPM --version" 
-            echo $(npm --version)
+          command: 
             npm run fe:install
+      # Step #2 Install BackEnd packages
       - run:
           name: Install API Dependencies
-          command: |
+          command: 
             npm run be:install
-      
+      # Step #3 Build FrontEnd
       - run:
           name: Front-End Build
-          command: |
+          command: 
             npm run fe:build
+      # Step #4 Build BackEnd
       - run:
           name: API Build
-          command: |
+          command: 
             npm run be:build
+      # Step #5 deply BackEnd
       - run:
           name: API deploy
-          command: |
+          command: 
             npm run be:deploy
+      # Step #6 Build FrontEnd
       - run:
           name: Front-End deploy
-          command: |
+          command: 
             npm run fe:deploy
+
 general:
+  # Limit Pipleine to run only to the following branch(s)
   branches:
     only:
-     - main
+     - bl7
+     
