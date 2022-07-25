@@ -48,3 +48,7 @@ jobs:
           name: Front-End deploy
           command: |
             npm run fe:deploy
+general:
+  branches:
+    only:
+     - main
