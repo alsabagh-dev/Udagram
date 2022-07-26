@@ -2,7 +2,7 @@
 eb use udagram-api-dev 
 
 
-# Set env  variables
+# Set env  variables.
 eb setenv APP_PORT=$APP_PORT
 eb setenv AWS_BUCKET=$AWS_BUCKET
 eb setenv AWS_PROFILE=$AWS_PROFILE
