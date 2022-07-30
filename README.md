@@ -10,7 +10,7 @@
 ### did the following:
 
 - Configured the services and infrastructure on AWS
-- Created scripts to deployed each component of the application
+- Created scripts to deploy each component of the application
 - Created and documented an automated pipeline using CircleCI
 
 
